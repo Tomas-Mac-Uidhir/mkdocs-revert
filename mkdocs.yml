@@ -1,0 +1,67 @@
+site_name: LEAP Ireland
+theme:
+  logo: assets/images/rubiks_logo_single_multi.png
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: teal
+      accent: purple
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: teal
+      accent: lime
+      plugins:
+        - search
+        - charts
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/tom%C3%A1s-mac-uidhir-92637158/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/MossyMacUidhir
+
+nav:
+  - About: index.md
+  - Documentation: documentation.md
+  - Scenarios: 
+        - Introduction: scenarios.md
+        - Reference: scenarios_desc_ref.md
+        - Sectoral Emissions Ceiling: scenarios_desc_sec.md
+  - Results:
+        - Introduction: results.md
+        - Reference: results_ref.md
+        - Sectoral Emissions Ceiling: results_sec.md
+  
+
+
+copyright:
+  "&copy UCC EPMG"
